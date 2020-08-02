@@ -3,8 +3,8 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "Justin having little C++ fun",
-            "command": "cl.exe",
+            "label": "cl.exe build active file",
+            "command": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.26.28801/bin/Hostx86/x86/cl.exe",
             "args": [
                 "/Zi",
                 "/EHsc",
@@ -19,70 +19,24 @@
         },
         {
             "type": "shell",
-            "label": "cl.exe build active file",
-            "command": "cl.exe",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
             "args": [
-                "/Zi",
-                "/EHsc",
-                "/Fe:",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
-            "problemMatcher": [],
+            "options": {
+                "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
-            "type": "shell",
-            "label": "shell: g++.exe build active file",
-            "command": "C:\\MinGW\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "C:\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build"
-        },
-        {
-            "type": "shell",
-            "label": "g++.exe build active file",
-            "command": "C:\\MinGW\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "C:\\MinGW\\bin"
-            }
-        },
-        {
-            "type": "shell",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:\\MinGW\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build"
         }
     ]
 }
